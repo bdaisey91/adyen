@@ -16,13 +16,13 @@
   if (!payload) {
     message.innerHTML = resultCode
   } else {
-    let paymentData = await fetch(`http://localhost:8082/payments/${ref}`)
+    let paymentData = await fetch(`${window.origin}/payments/${ref}`)
     paymentData = await paymentData.json()
     const details = {}
     paymentData.payment.details.forEach(({ key }) => {
       details[key] = getQueryVariable(key)
     })
-    let paymentDetails = await fetch(`http://localhost:8082/payments/${ref}/details`, {
+    let paymentDetails = await fetch(`${window.origin}/payments/${ref}/details`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'

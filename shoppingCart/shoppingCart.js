@@ -11,7 +11,7 @@ function launchDropIn() {
     currency: 'EUR',
     value: 501
   }
-  let paymentMethods = await fetch('http://localhost:8082/payment-methods', {
+  let paymentMethods = await fetch(`${window.origin}/payment-methods`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -22,10 +22,11 @@ function launchDropIn() {
     })
   })
   paymentMethods = await paymentMethods.json()
+  const originKey = (window.origin === 'http://localhost:8082') ? 'pub.v2.8115532860023116.aHR0cDovL2xvY2FsaG9zdDo4MDgy.tm_BCb0ekshyP1rn4GtET9aJXI9u1IXyCFdVlVGNl7M' : 'pub.v2.8115532860023116.aHR0cDovL2FkeWVuLXRlY2gtc3VwcG9ydC10ZXN0Lmhlcm9rdWFwcC5jb20v.BIooMyHbfffkwhsipbY_NnXXaqNlRsLtX0jKKLn7N78'
   const configuration = {
     locale: 'en-NL',
     environment: 'test',
-    originKey: 'pub.v2.8115532860023116.aHR0cDovL2xvY2FsaG9zdDo4MDgy.tm_BCb0ekshyP1rn4GtET9aJXI9u1IXyCFdVlVGNl7M',
+    originKey,
     paymentMethodsResponse: paymentMethods.response
   }
   const checkout = new AdyenCheckout(configuration)
@@ -33,8 +34,8 @@ function launchDropIn() {
   .create('dropin', {
     onSubmit: async (state, dropin) => {
       let { paymentMethod } = state.data
-      const returnUrl = `http://localhost:8082/redirect?ref=${ref}`
-      let payment = await fetch('http://localhost:8082/payment', {
+      const returnUrl = `${window.origin}/redirect?ref=${ref}`
+      let payment = await fetch(`${window.origin}/payment`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -48,7 +49,7 @@ function launchDropIn() {
       })
       payment = await payment.json()
       if (payment.payment.action && payment.payment.action.type === 'redirect') {
-        await fetch(`http://localhost:8082/payments/${ref}`, {
+        await fetch(`${window.origin}/payments/${ref}`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

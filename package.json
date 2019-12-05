@@ -7,9 +7,15 @@
     "body-parser": "^1.19.0",
     "express": "^4.17.1"
   },
-  "devDependencies": {},
-  "scripts": {
-    "start": "node server.js"
+  "devDependencies": {
+    "nodemon": "^2.0.1"
   },
-  "author": "Daisey Bell"
+  "scripts": {
+    "start": "node server.js",
+    "dev": "NODE_ENV=dev nodemon server.js"
+  },
+  "author": "Daisey Bell",
+  "engines": {
+    "node": "12.x"
+  }
 }
