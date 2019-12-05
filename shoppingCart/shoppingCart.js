@@ -27,9 +27,9 @@ function launchDropIn() {
       return 'pub.v2.8115532860023116.aHR0cDovL2xvY2FsaG9zdDo4MDgy.tm_BCb0ekshyP1rn4GtET9aJXI9u1IXyCFdVlVGNl7M'
     }
     if (window.location.protocol === 'https:') {
-      return 'pub.v2.8115532860023116.aHR0cHM6Ly9hZHllbi10ZWNoLXN1cHBvcnQtdGVzdC5oZXJva3VhcHAuY29tLw.Kfb11liW4wA4ivHg-o5YAfgvDCws-6M6shU1C72veXc'
+      return 'pub.v2.8115532860023116.aHR0cHM6Ly9hZHllbi10ZWNoLXN1cHBvcnQtdGVzdC5oZXJva3VhcHAuY29t.nsfo4nXAfr-EevBzoSuqn6kTei30JbqNgBR7e13hJ78'
     } else {
-      return 'pub.v2.8115532860023116.aHR0cDovL2FkeWVuLXRlY2gtc3VwcG9ydC10ZXN0Lmhlcm9rdWFwcC5jb20v.BIooMyHbfffkwhsipbY_NnXXaqNlRsLtX0jKKLn7N78'
+      return 'pub.v2.8115532860023116.aHR0cDovL2FkeWVuLXRlY2gtc3VwcG9ydC10ZXN0Lmhlcm9rdWFwcC5jb20.iazTShtWpP1wZF1npI-22Ehxv8d0jcWooieaAvGc_rs'
     }
   })()
   console.log('originKey', originKey)
