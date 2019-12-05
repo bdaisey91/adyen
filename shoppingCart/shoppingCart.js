@@ -11,7 +11,6 @@ function launchDropIn() {
     currency: 'EUR',
     value: 501
   }
-  console.log(window.origin)
   let paymentMethods = await fetch(`${window.origin}/payment-methods`, {
     method: 'POST',
     headers: {
