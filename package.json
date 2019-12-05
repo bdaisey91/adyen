@@ -16,6 +16,6 @@
   },
   "author": "Daisey Bell",
   "engines": {
-    "node": "10.x"
+    "node": "12.x"
   }
 }

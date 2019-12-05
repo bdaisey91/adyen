@@ -35,7 +35,6 @@ app.post('/payment', async (req,res) => {
         currency: req.body.amount.currency,
         value: req.body.amount.value
       },
-      shopperIP: '172.114.64.173',
       paymentMethod: req.body.paymentMethod,
       reference: req.body.ref,
       merchantAccount: config.merchantAccount,
@@ -94,5 +93,5 @@ app.post('/payments/:paymentId/details', async (req,res) => {
   }
 })
 
-const PORT = (process.env.NODE_ENV === 'dev') ? 8082 : process.env.PORT
+const PORT = process.env.PORT || 8082
 app.listen(PORT, () => console.log(`Listening On Port ${PORT}`))
