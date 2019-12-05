@@ -32,7 +32,6 @@ function launchDropIn() {
       return 'pub.v2.8115532860023116.aHR0cDovL2FkeWVuLXRlY2gtc3VwcG9ydC10ZXN0Lmhlcm9rdWFwcC5jb20.iazTShtWpP1wZF1npI-22Ehxv8d0jcWooieaAvGc_rs'
     }
   })()
-  console.log('originKey', originKey)
   const configuration = {
     locale: 'en-NL',
     environment: 'test',
