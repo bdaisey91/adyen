@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style type="text/css">
+    .none {
+      display: none;
+    }
+    .flex {
+      display: flex;
+    }
+    #shopping-cart {
+      width: 500px;
+      margin: 0 auto;
+      flex-direction: column;
+      font-family: sans-serif;
+      background-color: #f7f8f9;
+      border-radius: 10px;
+    }
+    #header {
+      text-align: center;
+      letter-spacing: 2px;
+      color: #000000;
+    }
+    table {
+      color: gray;
+      text-align: left;
+      width: 90%;
+      align-self: center;
+      background-color: gray;
+      border-radius: 3px;
+    }
+    tbody {
+      background-color: white;
+    }
+    table td, th{
+      padding: 10px 0 5px 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    table tr:nth-child(even) {background-color: #D0CCD0;}
+    #checkout {
+      padding: 17px 5px;
+      width: 300px;
+      border-radius: 10px;
+      background-color: #00112c;
+      align-self: center;
+      margin: 27px 0;
+      border: none;
+      color: #FBFCFF;
+      font-size: 18px;
+    }
+    #dropIn-container {
+      width: 500px;
+      margin: 0 auto;
+    }
+    #dropin {
+      width: 100%;
+    }
+  </style>
+  <link rel="stylesheet" href="https://checkoutshopper-live.adyen.com/checkoutshopper/sdk/3.3.0/adyen.css"/>
+  <title>Adyen Test</title>
+</head>
+<body>
+  <div id="shopping-cart" class="flex">
+    <h1 id="header">Your Cart</h1>
+    <table>
+      <tr>
+        <th>Item</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td>Dog Toy</td>
+        <td>€200</td>
+      </tr>
+      <tr>
+        <td>Dog Collar</td>
+        <td>€300</td>
+      </tr>
+      <tr>
+        <td>Dog Hat</td>
+        <td>€1</td>
+      </tr>
+      <tr>
+        <td>Total</td>
+        <td>€501</td>
+      </tr>
+    </table>
+    <button id="checkout" onclick="launchDropIn()">Checkout</button>
+  </div>
+  <div id="dropIn-container" class="none">
+    <div id="dropin"></div>
+  </div>
+  <script src="https://checkoutshopper-live.adyen.com/checkoutshopper/sdk/3.3.0/adyen.js"></script>
+  <script type="application/javascript" src="shoppingCart.js"></script>
+</body>
+</html>
