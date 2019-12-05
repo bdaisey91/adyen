@@ -94,4 +94,5 @@ app.post('/payments/:paymentId/details', async (req,res) => {
   }
 })
 
-app.listen(8082, () => console.log("listening on port 8082"))
+const PORT = (process.env.NODE_ENV === 'dev') ? 8082 : 80
+app.listen(PORT, () => console.log(`Listening On Port ${PORT}`))
